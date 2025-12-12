@@ -1,23 +1,27 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Validation App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<html>
-  <head>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+    <div class="container">
+        <h2>Check Voting Eligibility</h2>
 
-  <body>
-    <!-- write the body here -->
-	  <form>
-	  <label>Enter your Name:</label>
-    <input type="text" id="name">
-	  <br>
-	  <br>
-	  <label>Enter your age:</label>
-	  <input type="number" id="age">
-	  <br>
-	  <br>
-	  <button id="btn" type="submit">Submit</button>
-	 </form>
-    <script type="text/javascript" src="./script.js"></script>
-  </body>
+        <form id="form">
+            <label for="name">Enter Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label for="age">Enter Age:</label>
+            <input type="number" id="age" placeholder="Enter your age">
+
+            <button type="submit" id="btn">Submit</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
