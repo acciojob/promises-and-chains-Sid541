@@ -4,12 +4,14 @@ let submit = document.getElementById("btn");
 let form = document.getElementById("form");
 
 form.addEventListener("submit", (e) => {
-    e.preventDefault(); // stop page reload
+    e.preventDefault();
 
     if (name.value !== "" && age.value !== "") {
-        ageCheck(parseInt(age.value), name.value);
+        ageCheck(parseInt(age.value), name.value)
+        .then(() => {})
+        .catch(() => {}); // avoid unhandled rejection
     } else {
-        alert("Please enter valid details.");
+        alert("Please enter valid details");
     }
 });
 
