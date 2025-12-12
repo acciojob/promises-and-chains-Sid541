@@ -1,27 +1,30 @@
-let name = document.getElementById("name");
-let age = document.getElementById("age")
-let submit = document.getElementById("btn")
+let nameEl = document.getElementById("name");
+let ageEl = document.getElementById("age");
+let submit = document.getElementById("btn");
 
-submit.addEventListener("click",(e)=>{
-	console.log(name)
-    if(name.value !== "" && age.value !== ""){
-        ageCheck(parseInt(age.value));
+submit.addEventListener("click", (e) => {
+    
+    if (nameEl.value !== "" && ageEl.value !== "") {
+        ageCheck(parseInt(ageEl.value))
+            .then((message) => {
+                alert(message); // prints resolve value
+            })
+            .catch((err) => {
+                alert(err); // prints reject value
+            });
+    } else {
+        alert("Please enter valid details.");
     }
-    else{
-        alert("Please enter valid details.")
-    }
-})
+});
 
-function ageCheck(age){
-    let promise = new Promise((res,rej)=>{
-        setTimeout(()=>{
-            if(age > 18){
-                alert("Welcome, . You can vote.");
-                res("you can vote");
-            }else{
-                alert("Oh sorry . You aren't old enough.");
-                rej("Oh sorry . You aren't old enough.")
+function ageCheck(age) {
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            if (age > 18) {
+                res("Welcome, you can vote.");
+            } else {
+                rej("Oh sorry, you aren't old enough.");
             }
-        },4000)
-    })
+        }, 4000);
+    });
 }
